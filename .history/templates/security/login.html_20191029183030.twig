@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Se connecter' %}
+
+{% block body %}
+    <form action="{{ path('login') }}" method="post">
+    <div class="form-group">
+    <label for="username">Nom d'utilisateur</label>
+   <input type="text" id="username" name="_username>
+    </div>
+    </form>
+{% endblock %}
