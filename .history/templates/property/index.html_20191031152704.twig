@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Tous nos biens' %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h1>Voir tous nos biens</h1>
+
+{% for property in properties %}
+    {% include "property/" %}
+{% endfor %}
+    </div>
+
+    
+{% endblock %}

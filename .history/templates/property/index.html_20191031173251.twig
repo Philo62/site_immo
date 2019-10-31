@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Tous nos biens' %}
+
+{% block body %}
+<div class="jumbotron">
+    <div class="container">
+
+    </div>
+</div>
+    <div class="container mt-4">
+        <h1>Voir tous nos biens</h1>
+    
+    <div class="row">
+
+    {% for property in properties %}
+        <div class="col-md-4">
+            {% include "property/_property.html.twig" %}
+        </div>
+    {% endfor %}
+     </div>
+
+        <div class="pagination">
+            {{ knp_pagination_render(properties) }}
+        </div>  
+    </div>
+{% endblock %}
