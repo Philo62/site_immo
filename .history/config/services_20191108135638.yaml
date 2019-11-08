@@ -30,6 +30,6 @@ services:
         arguments:
             $twig: '@twig'
 
-    App\Listener\ImageCacheSubscriber:
+    App\Listener\ImageCacheSubsriber:
         tags:
-        - { name: doctrine.event_subscriber }
+        - { name
