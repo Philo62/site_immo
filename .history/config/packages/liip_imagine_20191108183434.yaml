@@ -8,7 +8,7 @@ liip_imagine:
                     size:       [360, 230]
                     mode:       outbound
         medium:
-            quality: 75
+            quality: 50
             filters:
                 thumbnail:
                     size:       [800, 530]

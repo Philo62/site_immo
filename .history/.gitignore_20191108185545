@@ -1,6 +1,5 @@
 public/images
-public/media
-
+public
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php

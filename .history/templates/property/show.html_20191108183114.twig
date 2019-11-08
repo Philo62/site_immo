@@ -9,9 +9,9 @@
                 <div class="col-md-8">
 
                 {% if property.filename %}
-                <img src="{{ vich_uploader_asset(property, 'imageFile') | imagine_filter('medium') }}" alt="card-img-top" style="width: 100%; height:auto;">
+                <img src="{{ vich_uploader_asset(property, 'imageFile') | imagine_filter('medium') }}" alt=" card-img-top" style="width: 100%; height:auto;">
                 {% else %}
-                    <img src="{{ '/images/properties/empty.jpg' | imagine_filter('medium') }}" alt="card-img-top" style="width: 100%; height:auto;"> 
+                    <img src="{{ '/images/properties/empty.jpg' | imagine_filter('thumb') }}" alt=" card-img-top" style="width: 100%; height:auto;"> 
                 {% endif %}
    
                 </div>
@@ -58,9 +58,7 @@
             <div class="col-md-4">
             <h2>Spécificités</h2>
             <ul class="list-group">
-            {% for option in property.options %}
-                <li class="list-group-item">{{ option.name}}</li>
-            {% endfor%}
+            {% for <option value=""></option> %}
             </ul>
             </div>    
         </div>
