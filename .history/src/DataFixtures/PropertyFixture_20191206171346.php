@@ -5,11 +5,11 @@ namespace App\DataFixtures;
 use Faker\Factory;
 use App\Entity\Property;
 use Doctrine\Bundle\FixturesBundle\Fixture;
-use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\ORM\EntityManagerInterface;
 
 class PropertyFixture extends Fixture
 {
-    public function load(ObjectManager $manager)
+    public function load( $manager)
     {
         $faker = Factory::create('fr_FR');
         for ($i = 0; $i < 100; $i++) {
