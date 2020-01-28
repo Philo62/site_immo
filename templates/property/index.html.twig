@@ -3,6 +3,7 @@
 {% block title 'Tous nos biens' %}
 
 {% block body %}
+                {# Moteur de recherche #}
     <div class="jumbotron">
         <div class="container">
         {{ form_start(form) }}
@@ -26,19 +27,22 @@
         </div>
     </div>
     <div class="container mt-4">
-        <h1>Voir tous nos biens</h1>
-    
-    <div class="row">
-
-    {% for property in properties %}
-        <div class="col-md-4">
-            {% include "property/_property.html.twig" %}
+   
+       <h1 class ="text-center ">Voir tous nos biens</h1>
+        <div class="pagination justify-content-center">
+                {{ knp_pagination_render(properties) }}
         </div>
-    {% endfor %}
-     </div>
+        
+        <div class="row">
 
-        <div class="pagination">
-            {{ knp_pagination_render(properties) }}
-        </div>  
-    </div>
+        {% for property in properties %}
+            <div class="col-md-4">
+                {% include "property/_property.html.twig" %}
+            </div>
+        {% endfor %}
+        </div>
+            <div class="pagination justify-content-center ">
+                {{ knp_pagination_render(properties) }}
+            </div>  
+        </div>
 {% endblock %}

@@ -5,7 +5,7 @@
  * (and its CSS file) in your base layout (base.html.twig).
  */
 global.$ = global.jQuery = $ ;
-// any CSS you require will output into a single css file (app.css in this case)
+// // any CSS you require will output into a single css file (app.css in this case)
 require('../css/app.css');
 require('select2')
 
