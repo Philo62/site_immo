@@ -3,15 +3,18 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Edition{% endblock %}</title>
-        <link rel="stylesheet" href="/assets/css/app.css">
+        <link rel="stylesheet" href="">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css">
         {# <link rel="stylesheet" href= {{ encore_entry_link_tags('app') }}> #}
-        {% block stylesheets %}{% endblock %}
+        {# {% block stylesheets %}{% endblock %} #}
     </head>
     <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
-  <a class="navbar-brand" href="{{ path ('home') }}">Decoopman Immo</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
+  <a class="navbar-brand" href="{{ path ('home') }}"><img src="{{ '/images/avatar_di.png'}}" alt="Logo"/></a>
+  {% if app.user %}
+<a class="navbar-brand text-danger " href="{{ path('admin') }}">Administration</a>
+  {% endif %}
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

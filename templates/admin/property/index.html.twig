@@ -5,9 +5,9 @@
 {% block body %}
    <div class="container mt-4">
    
-    <h1>Gérer les biens</h1>
+    <h1 class=" text-center text-light border bg-secondary rounded ">Gestion des biens</h1>
         <div class="text-right">
-        <a href="{{ path('admin.property.new') }}" class="btn btn-primary">Créer un Nouveau bien</a>
+        <a href="{{ path('admin.property.new') }}" class="btn btn-primary mb-4">Créer un Nouveau bien</a>
         </div>
     {% for message in app.flashes('success') %}
     <div class="alert alert-success">
@@ -15,10 +15,12 @@
     </div>
     {% endfor %}
 
-    <table class="table table-striped">
+    <table class="table table-striped border ">
     <thead>
     <tr>
     <th>Titre</th>
+    <th>Réference Id</th>
+    <th>Type de Biens</th>
     <th>Actions</th>
     </tr>
     </thead>
@@ -26,6 +28,8 @@
     {% for property in properties %}
     <tr>
     <td>{{ property.title }}</td>
+    <td>{{ property.id }}</td>
+    <td>{{ property.type }}</td>
     <td>
     <a href="{{ path('admin.property.edit', { id: property.id }) }}" class="btn btn-secondary">Editer</a>
         <form method="post" action="{{ path('admin.property.delete', {id: property.id}) }}" style="display: inline-block" onsubmit="return confirm('Vous êtes sûr de vouloir supprimer ?')">
@@ -39,7 +43,7 @@
     </tbody>
     </table>
     <div class="text-right">
-    <a href="{{ path('admin.property.new') }}" class="btn btn-primary">Créer un Nouveau bien</a>
+    <a href="{{ path('admin.property.new') }}" class="btn btn-primary mb-4">Créer un Nouveau bien</a>
     </div>
     
    </div>    

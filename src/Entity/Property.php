@@ -30,6 +30,17 @@ class Property
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
+
+    // const TYPE =[
+    //     0 => 'Maison',
+    //     1 => 'Appartement'
+    // ];
+    // /**
+    //  * @ORM\Id()
+    //  * @ORM\GeneratedValue()
+    //  * @ORM\Column(type="integer")
+    //  */
+
     private $id;
 
     /**
@@ -45,10 +56,15 @@ class Property
      * )
      * @Vich\UploadableField(mapping="property_image", fileNameProperty="filename")
      */
-
     private $imageFile;
+    
     /**
      * @ORM\Column(type="string", length=255)
+     */
+    private $type;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
      */
     private $title;
 
@@ -134,7 +150,7 @@ class Property
     {
         return $this->id;
     }
-
+    
     public function getTitle(): ?string
     {
         return $this->title;
@@ -143,6 +159,17 @@ class Property
     public function setTitle(string $title): self
     {
         $this->title = $title;
+
+        return $this;
+    }
+    public function getType(): ?string
+    {
+        return $this->type;
+    }
+
+    public function setType(string $type): self
+    {
+        $this->type = $type;
 
         return $this;
     }
@@ -227,6 +254,7 @@ class Property
     {
         return number_format($this->price,0,'',' ');
     }
+    
     public function getHeat(): ?int
     {
         return $this->heat;

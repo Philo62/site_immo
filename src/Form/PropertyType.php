@@ -17,6 +17,17 @@ class PropertyType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('type', ChoiceType::class, [
+                'required' => false,
+                'choices' => [
+                    'Appartement' => 'Appartement',
+                    'Maison' => 'Maison',
+                    'Garage' => 'Garage',
+                    'Bureau' => 'Bureau',
+                    'Château' => 'Château',
+                    'Commerce' => 'Commerce',
+                ]
+            ])
             ->add('title')
             ->add('description')
             ->add('surface')

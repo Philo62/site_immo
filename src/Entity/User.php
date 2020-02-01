@@ -4,10 +4,14 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Table(name="Agence2.user")
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @UniqueEntity(fields="email", message="Cet email est déjà enregistré en base.")
+ * @UniqueEntity(fields="username", message="Cet identifiant est déjà enregistré en base")
  */
 class User implements UserInterface, \Serializable
 {
@@ -27,6 +31,20 @@ class User implements UserInterface, \Serializable
      * @ORM\Column(type="string", length=255)
      */
     private $password;
+
+    /**
+     * @Assert\NotBlank(groups={"registration"})
+     * @Assert\Length(max=4096)
+     */
+    private $plainPassword;
+ 
+    /**
+     * @ORM\Column(type="string", length=60, unique=true)
+     * @Assert\NotBlank()
+     * @Assert\Length(max=60)
+     * @Assert\Email()
+     */
+    private $email;
 
     public function getId(): ?int
     {
@@ -54,6 +72,33 @@ class User implements UserInterface, \Serializable
     {
         $this->password = $password;
 
+        return $this;
+    }
+
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
+ 
+    public function setPlainPassword($password)
+    {
+        $this->plainPassword = $password;
+    }
+
+    /*
+     * Get email
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+ 
+    /*
+     * Set email
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
         return $this;
     }
 

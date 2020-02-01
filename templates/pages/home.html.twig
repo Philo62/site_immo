@@ -8,11 +8,11 @@
 {% block body %}
 <div class = "container d-flex justify-content-around mt-3 mb-3"> 
     <div class="dropdown">
-            <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
             Types de biens ?
             </button>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Maisons</a>
+                    <a class="dropdown-item" href="/biens">Maisons</a>
                     <a class="dropdown-item" href="#">Appartements</a>
                     <a class="dropdown-item" href="#">Lofts</a>
                     <a class="dropdown-item" href="#">Terrains</a>
@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div class="dropdown">
-            <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
                 Budget ?
             </button>
                 <div class="dropdown-menu">
@@ -44,7 +44,7 @@
                 </div>
             </div>
             <div class="dropdown">
-            <button class="btn btn-success dropdown-toggle" type="button" data-toggle="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
                 Nombre De chambres
             </button>
                 <div class="dropdown-menu">
@@ -56,9 +56,9 @@
             
     </div>
 	
-    <div class="jumbotron text-center">
-    <h1>Bienvenue chez Decoopman Immobilier</h1>
-      <p class=" text-success text-uppercase">Je veux acheter, faites-moi rêver ! </p>
+    <div class="jumbotron text-center bg-warning">
+    <h1 class="text-secondary">Bienvenue chez Decoopman Immobilier</h1>
+      <p class=" text-light text-uppercase">Je veux acheter, faites-moi rêver ! </p>
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -81,9 +81,9 @@
         </a>
         </div>
     </div>
-    <div class="container">
+    <div class="container bg-warning">
         <h2>Les derniers biens</h2>
-        <div class="row flex ">
+        {# <div class="row flex ">
         {% for property in properties %}
             <div class="col-3">
                 <div class="card mt-4">
@@ -97,6 +97,14 @@
                 </div>
             </div>
             {% endfor %}
+        </div> #}
+        <div class="row">
+
+        {% for property in properties %}
+            <div class="col-md-4">
+                {% include "property/_property.html.twig" %}
+            </div>
+        {% endfor %}
         </div>
     </div>
 {% endblock %}
