@@ -4,12 +4,13 @@
         
 {% block stylesheets %}{% endblock %}
 
-
+{# Page Carousel //  menu dropdown #}
 {% block body %}
+
 <div class = "container d-flex justify-content-around mt-3 mb-3"> 
     <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
-            Types de biens ?
+            Type de biens ?
             </button>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="/biens">Maisons</a>
@@ -56,8 +57,8 @@
             
     </div>
 	
-    <div class="jumbotron text-center bg-warning">
-    <h1 class="text-secondary">Bienvenue chez Decoopman Immobilier</h1>
+    <div class="jumbotron text-center bg-danger">
+    <h1 class="text-light">Bienvenue chez Decoopman Immobilier</h1>
       <p class=" text-light text-uppercase">Je veux acheter, faites-moi rêver ! </p>
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
@@ -81,8 +82,21 @@
         </a>
         </div>
     </div>
-    <div class="container bg-warning">
-        <h2>Les derniers biens</h2>
+    <div class="jumbotron row ">
+        <h3 class="col-md-9 mb-4 text-secondary">Toutes les annonces de l'agence</h3>
+        <div class="col-md-3 mb-4  ">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
+                    Tri par nouveautés
+                </button>
+                    <div class="dropdown-menu ">
+                        <a class="dropdown-item " href="#">Tri par nouveautés</a>
+                        <a class="dropdown-item" href="#">Tri par prix croissant </a>
+                        <a class="dropdown-item" href="#">Tri par prix décroissant</a>
+                    </div>
+            </div>
+        </div>
+
         {# <div class="row flex ">
         {% for property in properties %}
             <div class="col-3">
@@ -98,7 +112,7 @@
             </div>
             {% endfor %}
         </div> #}
-        <div class="row">
+        <div class="row ">
 
         {% for property in properties %}
             <div class="col-md-4">

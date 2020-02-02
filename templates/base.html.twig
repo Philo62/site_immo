@@ -10,25 +10,25 @@
         {# {% block stylesheets %}{% endblock %} #}
     </head>
     <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
-  <a class="navbar-brand" href="{{ path ('home') }}"><img src="{{ '/images/avatar_di.png'}}" alt="Logo"/></a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger border-bottom sticky-top ">
+  <a class="navbar-brand border rounded bg-light" href="{{ path ('home') }}"><img src="{{ '/images/avatar_di.png'}}" alt="Logo"/></a>
   {% if app.user %}
-<a class="navbar-brand text-danger " href="{{ path('admin') }}">Administration</a>
+<a class="navbar-brand text-white " href="{{ path('admin') }}">Administration</a>
   {% endif %}
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+  <button class="navbar-toggler fixed-top" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon fixed-top"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" {% if current_menu is defined and current_menu == 'properties' %}active{% endif %} href="{{ path ('property.index') }}">Acheter</a>
+        <a class="nav-link text-white" {% if current_menu is defined and current_menu == 'properties' %}active{% endif %} href="{{ path ('property.index') }}">Acheter</a>
       </li>
     </ul>
     {% if app.user %}
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a href="{{ path('logout') }}" class="nav-link">Se déconnecter</a>
+        <a href="{{ path('logout') }}" class="nav-link text-white">Se déconnecter</a>
       </li>
     </ul>
     {% endif %}
