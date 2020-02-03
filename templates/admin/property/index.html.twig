@@ -7,7 +7,7 @@
    
     <h1 class=" text-center text-light border bg-secondary rounded ">Gestion des biens</h1>
         <div class="text-right">
-        <a href="{{ path('admin.property.new') }}" class="btn btn-primary mb-4">Créer un Nouveau bien</a>
+        <a href="{{ path('admin.property.new') }}" class="btn btn-success mb-4">Créer un Nouveau bien</a>
         </div>
     {% for message in app.flashes('success') %}
     <div class="alert alert-success">
@@ -22,6 +22,7 @@
     <th>Réference Id</th>
     <th>Type de Biens</th>
     <th>Actions</th>
+    <th>Date d'entrée</th>
     </tr>
     </thead>
     <tbody>
@@ -30,6 +31,7 @@
     <td>{{ property.title }}</td>
     <td>{{ property.id }}</td>
     <td>{{ property.type }}</td>
+    
     <td>
     <a href="{{ path('admin.property.edit', { id: property.id }) }}" class="btn btn-secondary">Editer</a>
         <form method="post" action="{{ path('admin.property.delete', {id: property.id}) }}" style="display: inline-block" onsubmit="return confirm('Vous êtes sûr de vouloir supprimer ?')">
@@ -38,12 +40,13 @@
             <button class="btn btn-danger">Supprimer</button>
         </form>
     </td>
+    <td>{{ property.Createdat }}</td>
     </tr>
     {% endfor %}
     </tbody>
     </table>
     <div class="text-right">
-    <a href="{{ path('admin.property.new') }}" class="btn btn-primary mb-4">Créer un Nouveau bien</a>
+    <a href="{{ path('admin.property.new') }}" class="btn btn-success mb-4">Créer un Nouveau bien</a>
     </div>
     
    </div>    

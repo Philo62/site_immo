@@ -11,7 +11,6 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
-use Symfony\Component\Validator\Constraints\File as SymfonyFile;
 
 
 /**
@@ -21,25 +20,16 @@ use Symfony\Component\Validator\Constraints\File as SymfonyFile;
  */
 class Property
 {
-    const HEAT =[
+    const HEAT = [
         0 => 'Electrique',
-        1 => 'Gaz' 
+        1 => 'Gaz',
+        2 => 'Autres'
     ];
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-
-    // const TYPE =[
-    //     0 => 'Maison',
-    //     1 => 'Appartement'
-    // ];
-    // /**
-    //  * @ORM\Id()
-    //  * @ORM\GeneratedValue()
-    //  * @ORM\Column(type="integer")
-    //  */
 
     private $id;
 
@@ -57,7 +47,7 @@ class Property
      * @Vich\UploadableField(mapping="property_image", fileNameProperty="filename")
      */
     private $imageFile;
-    
+
     /**
      * @ORM\Column(type="string", length=255)
      */
@@ -96,6 +86,7 @@ class Property
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\Range(min=30000, max=900000)
      */
     private $price;
 
@@ -150,7 +141,7 @@ class Property
     {
         return $this->id;
     }
-    
+
     public function getTitle(): ?string
     {
         return $this->title;
@@ -174,7 +165,7 @@ class Property
         return $this;
     }
 
-    public function getSlug(): string 
+    public function getSlug(): string
     {
         return (new Slugify())->slugify($this->title);
     }
@@ -252,9 +243,9 @@ class Property
     }
     public function getFormattedPrice(): string
     {
-        return number_format($this->price,0,'',' ');
+        return number_format($this->price, 0, '', ' ');
     }
-    
+
     public function getHeat(): ?int
     {
         return $this->heat;
@@ -271,7 +262,7 @@ class Property
     {
         return self::HEAT[$this->heat];
     }
-    
+
     public function getCity(): ?string
     {
         return $this->city;
@@ -320,9 +311,9 @@ class Property
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeInterface
+    public function getCreatedAt($format = 'D-m-y H:i:s')
     {
-        return $this->created_at;
+        return $this->created_at->format($format);
     }
 
     public function setCreatedAt(\DateTimeInterface $created_at): self
@@ -363,7 +354,7 @@ class Property
     /**
  
      * @return  null|string
-     */ 
+     */
     public function getFilename(): ?string
     {
         return $this->filename;
@@ -374,7 +365,7 @@ class Property
      *
      * @param  null|string  $filename
      * @return Property
-     */ 
+     */
     public function setFilename(?string $filename): Property
     {
         $this->filename = $filename;
@@ -383,16 +374,16 @@ class Property
 
     /**
      * @return null|File
-     */ 
+     */
     public function getImageFile(): ?File
-    {    
+    {
         return $this->imageFile;
     }
 
     /**
      * @param null|File $imageFile
      * @return Property
-     */ 
+     */
     public function setImageFile(?File $imageFile): Property
     {
         $this->imageFile = $imageFile;

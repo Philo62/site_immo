@@ -9,6 +9,7 @@ class PropertySearch {
     
     /**
      * @var int|null
+     * @Assert\Range(min=30000, max=900000)
      */
     private $maxPrice;
 
