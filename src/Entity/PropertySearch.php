@@ -1,12 +1,21 @@
 <?php
+
 namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
 
 
-class PropertySearch {
+class PropertySearch
+{
+              // Tentative de tri par type de biens //
     
+    /**
+     * @var int|null
+     *
+     */
+    private $type;
+
     /**
      * @var int|null
      * @Assert\Range(min=30000, max=900000)
@@ -32,7 +41,7 @@ class PropertySearch {
      * Get the value of minSurface
      *
      * @return  int|null
-     */ 
+     */
     public function getMinSurface()
     {
         return $this->minSurface;
@@ -44,7 +53,7 @@ class PropertySearch {
      * @param  int|null  $minSurface
      *
      * @return  self
-     */ 
+     */
     public function setMinSurface($minSurface)
     {
         $this->minSurface = $minSurface;
@@ -56,7 +65,7 @@ class PropertySearch {
      * Get the value of maxPrice
      *
      * @return  int|null
-     */ 
+     */
     public function getMaxPrice()
     {
         return $this->maxPrice;
@@ -67,18 +76,17 @@ class PropertySearch {
      *
      * @param  int|null  $maxPrice
      *@return  self
-     */ 
+     */
     public function setMaxPrice($maxPrice)
     {
         $this->maxPrice = $maxPrice;
 
         return $this;
     }
-    
 
     /**
      * @return  ArrayCollection
-     */ 
+     */
     public function getOptions(): ArrayCollection
     {
         return $this->options;
@@ -86,9 +94,35 @@ class PropertySearch {
 
     /**
      * @param  ArrayCollection  $options
-     */ 
+     */
     public function setOptions(ArrayCollection $options): void
     {
         $this->options = $options;
+    }
+
+                        // Tentative de tri par type de biens //
+    
+    /**
+     * Get the value of type
+     *
+     * @return  int|null
+     */ 
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * Set the value of type
+     *
+     * @param  int|null  $type
+     *
+     * @return  self
+     */ 
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
     }
 }

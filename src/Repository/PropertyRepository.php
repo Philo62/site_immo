@@ -17,6 +17,7 @@ use Doctrine\Common\Persistence\ManagerRegistry;
  */
 class PropertyRepository extends ServiceEntityRepository
 {
+
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Property::class);
@@ -35,19 +36,35 @@ class PropertyRepository extends ServiceEntityRepository
                 ->setParameter('maxprice', $search->getMaxPrice());
         }
 
+        // tentative de tri par type de biens //
+
+        if ($search->getType()) {
+            $query = $query
+                ->andWhere('p.type = :house')
+                ->setParameter('house', $search->getType());
+        }
+            // tri par ville/cp //
+
+/*
         if ($search->getMinSurface()) {
             $query = $query
                 ->andWhere('p.price >= :minsurface')
                 ->setParameter('minsurface', $search->getMinSurface());
         }
-        
+*/
+        if ($search->getMinSurface()) {
+            $query = $query
+                ->andWhere('p.price >= :minsurface')
+                ->setParameter('minsurface', $search->getMinSurface());
+        }
+
         if ($search->getOptions()->count() > 0) {
             $k = 0;
-            foreach($search->getOptions() as $option) {
+            foreach ($search->getOptions() as $option) {
                 $k++;
                 $query = $query
                     ->andWhere(":option$k MEMBER OF p.options")
-                    ->setParameter("option$k",$option);
+                    ->setParameter("option$k", $option);
             }
         }
 
@@ -69,9 +86,12 @@ class PropertyRepository extends ServiceEntityRepository
         return $this->createQueryBuilder('p')
             ->where('p.sold = false');
     }
+
+
     // /**
     //  * @return Property[] Returns an array of Property objects
     //  */
+
     /*
     public function findByExampleField($value)
     {
