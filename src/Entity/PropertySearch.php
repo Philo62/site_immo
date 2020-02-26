@@ -8,6 +8,13 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 class PropertySearch
 {
+            // Tentative de tri par Ville //
+    /**
+     * @var int|null
+     * 
+     */
+    private $city;
+
               // Tentative de tri par type de biens //
     
     /**
@@ -122,6 +129,30 @@ class PropertySearch
     public function setType($type)
     {
         $this->type = $type;
+
+        return $this;
+    }
+                        // Tentative de tri par Ville //
+    /**
+     * Get the value of city
+     *
+     * @return  int|null
+     */ 
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * Set the value of city
+     *
+     * @param  int|null  $city
+     *
+     * @return  self
+     */ 
+    public function setCity($city)
+    {
+        $this->city = $city;
 
         return $this;
     }

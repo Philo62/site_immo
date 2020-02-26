@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Option;
 use App\Entity\Property;
 use App\Entity\PropertySearch;
+use Doctrine\ORM\Mapping\Entity;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -38,7 +39,14 @@ class PropertySearchType extends AbstractType
                 'choice_label' => 'name',
                 'multiple' => true
             ])
-
+            ->add('city', ChoiceType::class, [
+                'required' => false,
+                'label' => false,
+                'choices' => [
+                    'Lens' => 'Lens'
+                ]
+            ])
+            
             // tentative de tri par type de biens //
             
             ->add('type', ChoiceType::class, [

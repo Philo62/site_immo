@@ -45,13 +45,13 @@ class PropertyRepository extends ServiceEntityRepository
         }
             // tri par ville/cp //
 
-/*
-        if ($search->getMinSurface()) {
+
+        if ($search->getCity()) {
             $query = $query
-                ->andWhere('p.price >= :minsurface')
-                ->setParameter('minsurface', $search->getMinSurface());
+                ->andWhere('p.city >= :city')
+                ->setParameter('city', $search->getCity());
         }
-*/
+
         if ($search->getMinSurface()) {
             $query = $query
                 ->andWhere('p.price >= :minsurface')
