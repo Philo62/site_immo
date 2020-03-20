@@ -1,19 +1,22 @@
 <div class="card mb-4">
     {% if property.filename %}
+    <figure class="img">
     <img src="{{ vich_uploader_asset(property, 'imageFile') | imagine_filter('thumb') }}" alt=" card-img-top" style="width: 100%; height:auto;">
+   <figcaption>{{ property.description | nl2br }}</figcaption>
+   </figure>
     {% else %}
         <img src="{{ '/images/properties/empty.jpg' | imagine_filter('thumb') }}" alt=" card-img-top" style="width: 100%; height:auto;"> 
     {% endif %}
     
     <div class="card-body">
-        <h5 class="card-title">
-                <a href="{{path('property.show', {slug: property.slug, id: property.id}) }}">
+        <h5 class=" card-title ">
+                <a class=" badge badge-pill badge-info" href="{{path('property.show', {slug: property.slug, id: property.id}) }}">
                 {{ property.title }}
                 </a>
             </h5>
             <p class="card-text">{{ property.type }} {{ property.surface }} m2 - {{ property.city}} ({{ property.postalCode }})</p>
-                <div class="text-secondary" style="font-size:1.5rem; font-weight: bold;">
-        {{ property.formattedPrice }} €
+                <div class="bg-diblue border text-center rounded text-white" style="font-size:1.5rem; font-weight: bold; width: 200px;">
+        {{ property.formattedPrice }} € FAI
         </div>
     </div>
 </div>

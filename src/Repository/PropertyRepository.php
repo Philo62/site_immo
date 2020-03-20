@@ -40,21 +40,21 @@ class PropertyRepository extends ServiceEntityRepository
 
         if ($search->getType()) {
             $query = $query
-                ->andWhere('p.type = :house')
-                ->setParameter('house', $search->getType());
+                ->andWhere('p.type = :type')
+                ->setParameter('type', $search->getType());
         }
             // tri par ville/cp //
 
 
         if ($search->getCity()) {
             $query = $query
-                ->andWhere('p.city >= :city')
+                ->andWhere('p.city = :city')
                 ->setParameter('city', $search->getCity());
         }
 
         if ($search->getMinSurface()) {
             $query = $query
-                ->andWhere('p.price >= :minsurface')
+                ->andWhere('p.surface >= :minsurface')
                 ->setParameter('minsurface', $search->getMinSurface());
         }
 
@@ -70,7 +70,7 @@ class PropertyRepository extends ServiceEntityRepository
 
         return $query->getQuery();
     }
-
+    
     /**
      * @return Property[]
      */

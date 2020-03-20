@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Edition{% endblock %}</title>
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="../Agence/assets/css/app.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css">
         {# <link rel="stylesheet" href= {{ encore_entry_link_tags('app') }}> #}
@@ -13,10 +13,12 @@
         {{ encore_entry_script_tags('app') | replace({'src=': 'defer src='}) | raw }} 
     </head>
     <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-danger border-bottom sticky-top ">
-  <a class="navbar-brand border rounded bg-light" href="{{ path ('home') }}"><img src="{{ '/images/avatar_di.png'}}" alt="Logo"/></a>
+    <nav class="navbar navbar-expand-lg border-bottom border-info navbar-dark bg-greeny sticky-top ">
+    
+  <a class="navbar-brand border rounded border-info bg-light" href="{{ path ('home') }}"><img src="{{ '/images/avatar_di.png'}}" alt="Logo"/></a>
   {% if app.user %}
-<a class="navbar-brand text-white " href="{{ path('admin') }}">Administration</a>
+  <div class="bg-white border rounded">
+<a class=" btn btn-outline-info" href="{{ path('admin') }}">Administration</a></div>
   {% endif %}
   <button class="navbar-toggler fixed-top" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon fixed-top"></span>
@@ -25,18 +27,20 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link text-white" {% if current_menu is defined and current_menu == 'properties' %}active{% endif %} href="{{ path ('property.index') }}">Acheter</a>
+      <div class="bg-white border rounded ml-3">
+        <a class="btn btn-outline-info " {% if current_menu is defined and current_menu == 'properties' %}active{% endif %} href="{{ path ('property.index') }}">Acheter</a>
+      </div>
       </li>
     </ul>
     {% if app.user %}
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a href="{{ path('logout') }}" class="nav-link text-white">Se déconnecter</a>
+        <a href="{{ path('logout') }}" class="btn btn-outline-secondary">Se déconnecter</a>
       </li>
     </ul>
     {% endif %}
   </div>
-</nav>
+  </nav>
         {% block body %}{% endblock %}
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

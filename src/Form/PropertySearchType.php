@@ -12,6 +12,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Validator\Constraints\Choice;
 
 class PropertySearchType extends AbstractType
 {
@@ -39,16 +40,16 @@ class PropertySearchType extends AbstractType
                 'choice_label' => 'name',
                 'multiple' => true
             ])
-            ->add('city', ChoiceType::class, [
+            ->add('city', EntityType::class, [
                 'required' => false,
                 'label' => false,
-                'choices' => [
-                    'Lens' => 'Lens'
-                ]
+                'class' => Property::class,
+                'choice_label' => 'city',  
+                    
             ])
-            
+
             // tentative de tri par type de biens //
-            
+
             ->add('type', ChoiceType::class, [
                 'required' => false,
                 'label' => false,
@@ -59,9 +60,10 @@ class PropertySearchType extends AbstractType
                     'Bureau' => 'Bureau',
                     'Château' => 'Château',
                     'Commerce' => 'Commerce',
-                ]
-            ])
-            ;
+                    
+                ],
+                // 'multiple' => 'true'
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

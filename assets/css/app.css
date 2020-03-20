@@ -8,3 +8,42 @@
 	text-align: left;
 	background-color: rgb(189, 11, 11);
 } */
+.bg-greeny,.greeny {
+	background-color:#60e096;
+}
+
+.btn-outline-info, h1, .info, .diblue {
+	color: #3e3b66 !important;
+	border-color: #3e3b66 !important;
+}
+.bg-diblue {
+	background-color:#3e3b66 !important ;
+}
+/* Test hover on description photo */
+
+figure {
+  position:relative;
+}
+
+/* img {
+  width:100%;
+  vertical-align:top;
+} */
+
+figcaption {
+opacity:0;
+background-color:#60e096;
+text-align:center;
+position:absolute;
+bottom:0;
+left:0;
+right:0;
+/* border:5px ridge grey; */
+}
+
+figure:hover figcaption {
+transition:all 2s;
+  opacity:1;
+/*   transform:rotate(360deg); */
+}
+
