@@ -13,12 +13,13 @@
         {{ encore_entry_script_tags('app') | replace({'src=': 'defer src='}) | raw }} 
     </head>
     <body>
-    <nav class="navbar navbar-expand-lg border-bottom border-info navbar-dark bg-greeny sticky-top ">
+    <nav class="navbar navbar-expand-lg border-bottom border-info navbar-dark bg-diblue sticky-top ">
     
   <a class="navbar-brand border rounded border-info bg-light" href="{{ path ('home') }}"><img src="{{ '/images/avatar_di.png'}}" alt="Logo"/></a>
   {% if app.user %}
-  <div class="bg-white border rounded">
+  <div class="bg-white  rounded">
 <a class=" btn btn-outline-info" href="{{ path('admin') }}">Administration</a></div>
+
   {% endif %}
   <button class="navbar-toggler fixed-top" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon fixed-top"></span>
@@ -27,8 +28,8 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-      <div class="bg-white border rounded ml-3">
-        <a class="btn btn-outline-info " {% if current_menu is defined and current_menu == 'properties' %}active{% endif %} href="{{ path ('property.index') }}">Acheter</a>
+      <div class="bg-white rounded ml-3">
+        <a class="btn btn-outline-info " {% if current_menu is defined and current_menu == 'properties' %}active{% endif %} href="{{ path ('property.index') }}">Rechercher</a>
       </div>
       </li>
     </ul>

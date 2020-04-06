@@ -1,4 +1,20 @@
 {{ form_start(form) }}
+<div class="bg-white rounded ml-3">
+{#  Création onglets pour insérer Infos du bien + infos propriétaire  #}
+
+{# <div id="tabs">
+    <ul>
+        <li><a href="#" rel="{{ path ('admin') }}">Infos du Biens</a></li> 
+        <li><a href="{{ path ('admin.property.edit', { id: '14' }) }}" rel="url1">Propriétaires</a></li> 
+    </ul>
+</div> #}
+
+{# <iframe id="container"> #}
+{# FIN onglets // #}
+
+    <a class=" btn btn-outline-info" href="{{ path ('owner') }}">Infos Propriétaires</a>
+    
+    <a class=" btn btn-outline-info" href="{{ path ('admin') }}">Annuler</a></div>
     <div class="row ">
         <div class="col-md-4">{{ form_row(form.title) }}</div>
          <div class="col-md-4">{{ form_row(form.surface) }}</div>
@@ -18,8 +34,10 @@
     <div class="col-md-2">{{ form_row(form.city) }}</div>
     <div class="col-md-2">{{ form_row(form.postal_code) }}</div>
     <div class="col-md-2">{{ form_row(form.options) }}</div>
+    {# <div class="col-md-2">{{ form_row(form.seller) }}</div> #}
     <div class="col-md-2">{{ form_row(form.sold) }}</div>
     </div>
     {{ form_rest(form) }} 
     <button class="btn bg-success">{{ button|default('Enregistrer') }}</button>
     {{ form_end(form) }} 
+    </iframe>

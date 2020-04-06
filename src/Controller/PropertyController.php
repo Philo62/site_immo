@@ -6,6 +6,7 @@ use App\Entity\Property;
 use App\Form\ContactType;
 use App\Entity\PropertySearch;
 use App\Form\PropertySearchType;
+use App\Form\PropertyType;
 use App\Notification\ContactNotific;
 use App\Notification\ContactNotification;
 use App\Repository\PropertyRepository;
@@ -28,12 +29,11 @@ class PropertyController extends AbstractController
         $this->repository = $repository; 
         $this->em = $em;   
     }
-
     /**
      * @Route("/biens", name="property.index")
      * @return Response
      */
-    public function index(PaginatorInterface $paginator, Request $request): Response
+     public function index(PaginatorInterface $paginator, Request $request): Response
     {
         $search = new PropertySearch();
         $form = $this->createForm(PropertySearchType::class, $search);

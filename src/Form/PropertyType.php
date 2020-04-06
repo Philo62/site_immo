@@ -9,6 +9,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use App\Entity\Option;
+use App\Entity\User;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 
@@ -25,7 +26,6 @@ class PropertyType extends AbstractType
                     'Maison' => 'Maison',
                     'Garage' => 'Garage',
                     'Bureau' => 'Bureau',
-                    'Château' => 'Château',
                     'Commerce' => 'Commerce',
                 ]
             ])
@@ -51,6 +51,11 @@ class PropertyType extends AbstractType
             ->add('city')
             ->add('address')
             ->add('postal_code')
+            ->add('seller', EntityType::class, [
+                'class' => User::class,
+                'required' => false,
+                'choice_label' =>'username'
+            ])
             ->add('sold')
         ;
     }

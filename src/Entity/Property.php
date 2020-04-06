@@ -131,6 +131,11 @@ class Property
      */
     private $updated_at;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $seller;
+
     public function __construct()
     {
         $this->created_at = new \DateTime();
@@ -411,5 +416,17 @@ class Property
     public function __toString()
     {
         return $this->type;
+    }
+
+    public function getSeller(): ?string
+    {
+        return $this->seller;
+    }
+
+    public function setSeller(string $seller): self
+    {
+        $this->seller = $seller;
+
+        return $this;
     }
 }

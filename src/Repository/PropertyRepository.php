@@ -43,7 +43,7 @@ class PropertyRepository extends ServiceEntityRepository
                 ->andWhere('p.type = :type')
                 ->setParameter('type', $search->getType());
         }
-            // tri par ville/cp //
+        // tri par ville/cp //
 
 
         if ($search->getCity()) {
@@ -69,8 +69,9 @@ class PropertyRepository extends ServiceEntityRepository
         }
 
         return $query->getQuery();
+        
     }
-    
+
     /**
      * @return Property[]
      */
@@ -115,6 +116,17 @@ class PropertyRepository extends ServiceEntityRepository
             ->getQuery()
             ->getOneOrNullResult()
         ;
+    }
+    */
+    // test pour afficher le nb de biens par l'id //
+    /*
+    public function countByAccount()
+    {
+    $qb = $this->createQueryBuilder('e');
+ 
+    $qb ->select($qb->expr()->count('e'));
+ 
+    return (int) $qb->getQuery()->getSingleScalarResult();
     }
     */
 }

@@ -92,5 +92,6 @@ class AdminPropertyController extends AbstractController
         }
         return $this->redirectToRoute('admin.property.index');
     }
+    
 }
 

@@ -59,40 +59,45 @@
         {{ property.description | nl2br }}
         </p>
         <div class="row">
-            <div class="col-md-8">
-            <h2>Caractéristiques</h2>
-                <table class="table-striped">
+            <div class="col-md-8 ">
+            <h2 class="diblue">Caractéristiques</h2>
+                <table class="table-striped ">
                 <tr>
-                <td>Surface Habitable</td>
-                <td>{{ property.surface }} m2</td>
+                <td class="bg-secondary">Surface Habitable</td>
+                <td class="bg-primary text-center">{{ property.surface }} m2</td>
                 </tr>
                 <tr>
-                <td>Pièces</td>
-                <td>{{ property.rooms }}</td>
+                <td class="">Pièces</td>
+                <td class="text-center">{{ property.rooms }}</td>
                 </tr>
                 <tr>
-                <td>Chambres</td>
-                <td>{{ property.bedrooms }}</td>
+                <td class="bg-secondary">Chambres</td>
+                <td class="bg-primary text-center">{{ property.bedrooms }}</td>
                 </tr>
                 <tr>
                 <td>Etage</td>
-                <td>{{ property.floor }}</td>
+                <td class="text-center">{{ property.floor }}</td>
                 </tr>
                 <tr>
-                <td>Chauffage</td>
-                <td>{{ property.heatType }}</td>
+                <td class="bg-secondary">Chauffage</td>
+                <td class="bg-primary text-center">{{ property.heatType }}</td>
                 </tr>
                 </table>
             </div>
-            <div class="col-md-4">
-            <h2>Spécificités</h2>
-            <ul class="list-group">
+            <div class="col-md-4 text-center">
+            <h2 class="diblue">Particularités</h2>
+            <ul class="list-group mt-4">
             {% for option in property.options %}
                 <li class="list-group-item">{{ option.name}}</li>
-            {% endfor%}
+            {% endfor %}
             </ul>
             </div>    
         </div>
+            <div class="col-sm-4 mt-4 ">
+                <div class=" card-title text-center rounded bg-secondary text-white">
+                {# <div class="badge pill bg-diblue">{{property.seller }}</div>  sera votre négociateur pour ce bien sous le mandat Numéro {{ property.id }}  #}
+                </div>
+            </div>
         {# <nav class="nav nav-tabs"></nav> #}
     </div>
 {% endblock %}

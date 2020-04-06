@@ -23,14 +23,14 @@ class PropertySearchType extends AbstractType
                 'required' => false,
                 'label' => false,
                 'attr' => [
-                    'placeholder' => 'Surface minimale'
+                    'placeholder' => 'Surface min'
                 ]
             ])
             ->add('maxPrice', IntegerType::class, [
                 'required' => false,
                 'label' => false,
                 'attr' => [
-                    'placeholder' => 'Budget Max'
+                    'placeholder' => 'Budget max'
                 ]
             ])
             ->add('options', EntityType::class, [
@@ -38,14 +38,14 @@ class PropertySearchType extends AbstractType
                 'label' => false,
                 'class' => Option::class,
                 'choice_label' => 'name',
-                'multiple' => true
+                'multiple' => true,
+                
             ])
             ->add('city', EntityType::class, [
                 'required' => false,
                 'label' => false,
                 'class' => Property::class,
                 'choice_label' => 'city',  
-                    
             ])
 
             // tentative de tri par type de biens //
@@ -61,7 +61,7 @@ class PropertySearchType extends AbstractType
                     'Château' => 'Château',
                     'Commerce' => 'Commerce',
                     
-                ],
+                ]
                 // 'multiple' => 'true'
             ]);
     }
