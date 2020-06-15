@@ -4,30 +4,29 @@
 
 {% block body %}
                 {# Moteur de recherche Page acheter #}
-    <div class="jumbotron">
+    <div class="jumbotron pink">
         <div class="container">
             {{ form_start(form) }}
             <div class="form-row align-items-end">
+                         {# tentative de tri par type de biens  #}
+                <div class="col">
+                {{ form_row(form.type) }}
+                </div>
                 <div class="col">
                 {{ form_row(form.minSurface) }}
                 </div>
                 <div class="col">
                 {{ form_row(form.maxPrice) }}
                 </div>
-                <div class="col">
-                    <div class="form-group" id="price-slider"> 
+                {# <div class="col"> #}
+                    {# <div class="form-group" id="price-slider"> 
                     {{ form_row(form.maxPrice)}}
-                    </div>
-                </div>
+                    </div> #}
+                {# </div> #}
                 <div class="col">
                 {{ form_row(form.options) }} 
                 </div>
-                                        {# tentative de tri par type de biens  #}
-                <div class="col">
-                {{ form_row(form.type) }}
-                </div>
-                                       {# tentative de tri par city  #}
-
+                                 {# tentative de tri par city  #}
                 <div class="col">
                 {{ form_row(form.city) }}
                 </div>
@@ -43,7 +42,7 @@
     </div>
     <div class="container mt-4 ">
     <div class="col-md-12 mb-4 d-flex text-center" style="justify-content: center !important;">
-        <h2 class=" card bg-diblue text-white font-italic text-center" style="width: 500px;">Biens immobiliers en vente</h2></div>
+        <h2 class=" card bg-diblue text-white font-italic text-center" style="width: 500px;">Biens en vente</h2></div>
        {# <h1 class ="text-center font-italic ">Voir tous nos biens</h1> #}
         <div class="pagination justify-content-center  ">
                 {{ knp_pagination_render(properties) }}

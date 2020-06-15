@@ -1,43 +1,79 @@
 {{ form_start(form) }}
-<div class="bg-white rounded ml-3">
-{#  Création onglets pour insérer Infos du bien + infos propriétaire  #}
-
-{# <div id="tabs">
-    <ul>
-        <li><a href="#" rel="{{ path ('admin') }}">Infos du Biens</a></li> 
-        <li><a href="{{ path ('admin.property.edit', { id: '14' }) }}" rel="url1">Propriétaires</a></li> 
-    </ul>
-</div> #}
-
-{# <iframe id="container"> #}
-{# FIN onglets // #}
-
-    <a class=" btn btn-outline-info" href="{{ path ('owner') }}">Infos Propriétaires</a>
+<a class=" btn btn-outline-info" href="{{ path ('admin') }}">Estimation</a>
+    <a class=" btn btn-outline-info" href="{{ path ('admin') }}">Biens existants</a>
     
-    <a class=" btn btn-outline-info" href="{{ path ('admin') }}">Annuler</a></div>
+    <a class=" btn btn-outline-info" href="{{ path ('admin') }}">Factures mandataires</a>
+    <a class=" btn btn-outline-info" href="{{ path ('admin') }}">Factures notaires</a>
+    <a class=" btn btn-outline-info" href="{{ path ('admin') }}">Lettre de relance </a></div>
+    {# <a class=" btn btn-outline-info" href="{{ path ('admin') }}">Nouveau mandat</a></div> #}
+    
+<h1 class= "card text-center mb-4">Infos propriétaires</h1>
+    <div class="row ">
+         <div class="col-md-3">{{ form_row(form.Name) }}</div> 
+         <div class="col-md-3">{{ form_row(form.LastName) }}</div>
+          <div class="col-md-3">{{ form_row(form.BirthDate) }}</div>
+          <div class="col-md-3">{{ form_row(form.BirthPlace) }}</div> 
+    </div>
+    
+    <div class="row ">
+        
+        <div class="col-md-2">{{ form_row(form.SecondName) }}</div>
+        <div class="col-md-2">{{ form_row(form.SecondLastName) }}</div>
+        <div class="col-md-2">{{ form_row(form.SecondBirthDate) }}</div>
+        <div class="col-md-2">{{ form_row(form.SecondBirthPlace) }}</div>
+        <div class="col-md-2">{{ form_row(form.MarriedDate) }}</div>
+        
+    </div>    
+    <div class="row ">
+        <div class="col-md-2">{{ form_row(form.TelOne) }}</div>
+        <div class="col-md-3">{{ form_row(form.MailOne) }}</div>
+        <div class="col-md-2">{{ form_row(form.TelTwo) }}</div>
+        <div class="col-md-2">{{ form_row(form.MailTwo) }}</div>
+        <div class="col-md-2">{{ form_row(form.TelTwo) }}</div>
+        <div class="col-md-2">{{ form_row(form.Procurations) }}</div>
+        <div class="col-md-2">{{ form_row(form.AddressProperty) }}</div>
+
+        {# <div class="col-md-2">{{ form_row(form.PostalCode) }}</div> #}
+        <div class="col-md-3">{{ form_row(form.Country) }}</div>
+        <div class="col-md-2">{{ form_row(form.Cadastre) }}</div>
+        <div class="col-md-2">{{ form_row(form.Notary) }}</div>
+        <div class="col-md-2">{{ form_row(form.Exclusivity) }}</div>
+        <div class="col-md-2">{{ form_row(form.TextPub) }}</div>
+        <div class="col-md-2">{{ form_row(form.Dpe) }}</div>
+        <div class="col-md-2">{{ form_row(form.Ges) }}</div>
+    </div>
+
+{# //////////////////////////// #}
+
+<div class="bg-white rounded text-center mt-4 mb-4">
+    <h1 class= "card text-center mb-4">Descriptif du bien à vendre</h1>
     <div class="row ">
         <div class="col-md-4">{{ form_row(form.title) }}</div>
+        <div class="col-md-3">{{ form_row(form.address) }}</div>
+        <div class="col-md-2">{{ form_row(form.city) }}</div>
+        <div class="col-md-2">{{ form_row(form.postal_code) }}</div>
          <div class="col-md-4">{{ form_row(form.surface) }}</div>
           <div class="col-md-4">{{ form_row(form.price) }}</div>
     </div>
+
     <div class="row ">
-    <div class="col-md-2">{{ form_row(form.type) }}</div>
-    <div class="col-md-2">{{ form_row(form.rooms) }}</div>
-    <div class="col-md-2">{{ form_row(form.bedrooms) }}</div>
-    <div class="col-md-2">{{ form_row(form.heat) }}</div>
-    <div class="col-md-2">{{ form_row(form.floor) }}</div>
-    
+        <div class="col-md-2">{{ form_row(form.type) }}</div>
+        <div class="col-md-2">{{ form_row(form.rooms) }}</div>
+        <div class="col-md-2">{{ form_row(form.bedrooms) }}</div>
+        <div class="col-md-2">{{ form_row(form.heat) }}</div>
+        <div class="col-md-2">{{ form_row(form.floor) }}</div>
     </div>    
+    
     <div class="row ">
-    <div class="col-md-2">{{ form_row(form.imageFile) }}</div>
-    <div class="col-md-3">{{ form_row(form.address) }}</div>
-    <div class="col-md-2">{{ form_row(form.city) }}</div>
-    <div class="col-md-2">{{ form_row(form.postal_code) }}</div>
-    <div class="col-md-2">{{ form_row(form.options) }}</div>
-    {# <div class="col-md-2">{{ form_row(form.seller) }}</div> #}
-    <div class="col-md-2">{{ form_row(form.sold) }}</div>
+        <div class="col-md-2">{{ form_row(form.imageFile) }}</div>
+        
+        <div class="col-md-2">{{ form_row(form.options) }}</div>
+        <div class="col-md-2">{{ form_row(form.seller) }}</div>
+        <div class="col-md-2">{{ form_row(form.sold) }}</div>
     </div>
+
+
+
     {{ form_rest(form) }} 
     <button class="btn bg-success">{{ button|default('Enregistrer') }}</button>
     {{ form_end(form) }} 
-    </iframe>

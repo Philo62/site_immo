@@ -1,4 +1,6 @@
 {
+    "name": "philo/agence",
+    "description": "Immo",
     "type": "project",
     "license": "proprietary",
     "require": {

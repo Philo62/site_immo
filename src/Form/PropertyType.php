@@ -25,7 +25,7 @@ class PropertyType extends AbstractType
                     'Appartement' => 'Appartement',
                     'Maison' => 'Maison',
                     'Garage' => 'Garage',
-                    'Bureau' => 'Bureau',
+                    'Terrain' => 'Terrain',
                     'Commerce' => 'Commerce',
                 ]
             ])
@@ -57,6 +57,29 @@ class PropertyType extends AbstractType
                 'choice_label' =>'username'
             ])
             ->add('sold')
+            ->add('Name')
+            ->add('LastName')
+            ->add('BirthDate')
+            ->add('BirthPlace')
+            ->add('SecondName')
+            ->add('SecondLastName')
+            ->add('SecondBirthDate')
+            ->add('SecondBirthPlace')
+            ->add('MarriedDate')
+            ->add('TelOne')
+            ->add('MailOne')
+            ->add('TelTwo')
+            ->add('MailTwo')
+            ->add('Procurations')
+            ->add('AddressProperty')
+            // ->add('PostalCode')
+            ->add('Country')
+            ->add('Cadastre')
+            ->add('Notary')
+            ->add('Exclusivity')
+            ->add('TextPub')
+            ->add('Dpe')
+            ->add('Ges')
         ;
     }
 

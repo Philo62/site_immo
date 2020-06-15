@@ -39,8 +39,8 @@ class User implements UserInterface, \Serializable
     private $plainPassword;
  
     /**
-     * @ORM\Column(type="string", length=60, unique=true)
-     * @Assert\NotBlank()
+     * @ORM\Column(type="string", length=60, unique=true, nullable=true)
+    //  * @Assert\NotBlank()
      * @Assert\Length(max=60)
      * @Assert\Email()
      */

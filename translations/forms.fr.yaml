@@ -1,11 +1,32 @@
 City: Ville
 Address: Adresse
 Title: Titre
-Price: Prix
+Price: Prix FAI
 Rooms: Pièces
-Bedrooms: Lits
+Bedrooms: Chambres
 Floor: Etages
 Heat: Chauffage
 Postal code: Code postal
 Sold: Vendu
 Seller: Negociateurs
+Image file: Photo
+Name: Prénom
+Last name: Nom de famille
+Birth date: Dâte de naissance
+Birth place: Lieu de naissance
+Second name: Prénom 2ème propriétaire
+Second last name: Nom 2ème propriétaire
+Second birth date: Dâte de naissance 2ème P
+Married date: Dâte de mariage
+Tel one: Téléphone
+Mail one: Email
+Tel two: Télephone 2
+Mail two: Email 2
+Country: Localité
+Notary: Notaire
+Exclusivity: Exclusivité
+Text pub: Description du bien
+Dpe: DPE
+Ges: GES
+Second birth place: Lieu de naissance 2éme P
+Address property: Adresse des Proprios

@@ -1,0 +1,42 @@
+{{ form_start(form) }}
+<div class="bg-white rounded ml-3">
+
+    <a class=" btn btn-outline-info" href="{{ path ('owner') }}">Nouveau</a>
+    <a class=" btn btn-outline-info" href="{{ path ('owner') }}">Biens existants</a>
+    
+    <a class=" btn btn-outline-info" href="{{ path ('admin') }}">Factures</a></div>
+    <div class="row ">
+        <div class="col-md-4">{{ form_row(form.Name) }}</div>
+         <div class="col-md-4">{{ form_row(form.LastName) }}</div>
+          <div class="col-md-4">{{ form_row(form.BirthDate) }}</div>
+    </div>
+    <div class="row ">
+    <div class="col-md-2">{{ form_row(form.BirthPlace) }}</div>
+    <div class="col-md-2">{{ form_row(form.SecondName) }}</div>
+    <div class="col-md-2">{{ form_row(form.SecondLastName) }}</div>
+    <div class="col-md-2">{{ form_row(form.SecondBirthDate) }}</div>
+    <div class="col-md-2">{{ form_row(form.SecondBirthPlace) }}</div>
+    <div class="col-md-2">{{ form_row(form.MarriedDate) }}</div>
+    
+    </div>    
+    <div class="row ">
+    <div class="col-md-2">{{ form_row(form.TelOne) }}</div>
+    <div class="col-md-3">{{ form_row(form.MailOne) }}</div>
+    <div class="col-md-2">{{ form_row(form.TelTwo) }}</div>
+    <div class="col-md-2">{{ form_row(form.MailTwo) }}</div>
+    <div class="col-md-2">{{ form_row(form.TelTwo) }}</div>
+    <div class="col-md-2">{{ form_row(form.Procurations) }}</div>
+    <div class="col-md-2">{{ form_row(form.Address) }}</div>
+
+    <div class="col-md-2">{{ form_row(form.PostalCode) }}</div>
+    <div class="col-md-3">{{ form_row(form.Country) }}</div>
+    <div class="col-md-2">{{ form_row(form.Cadastre) }}</div>
+    <div class="col-md-2">{{ form_row(form.Notary) }}</div>
+    <div class="col-md-2">{{ form_row(form.Exclusivity) }}</div>
+    <div class="col-md-2">{{ form_row(form.TextPub) }}</div>
+    <div class="col-md-2">{{ form_row(form.Dpe) }}</div>
+    <div class="col-md-2">{{ form_row(form.Ges) }}</div>
+    </div>
+    {{ form_rest(form) }} 
+    <button class="btn bg-success">{{ button|default('Enregistrer') }}</button>
+    {{ form_end(form) }} 

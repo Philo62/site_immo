@@ -29,24 +29,24 @@
     </thead>
     <tbody>
 
-    {% for property in properties %}
+    {# {% for property in properties %} #}
 
-    <td>{{ property.title }}</td>
-    <td>{{ property.id }}</td>
-    <td>{{ property.type }}</td>
-    
+    {# <td>{{ product.title }}</td>
+    <td>{{ product.id }}</td>
+    <td>{{ product.type }}</td>
+     #}
     <td>
-    <a href="{{ path('admin.property.edit', { id: property.id }) }}" class="btn btn-outline-primary">Mettre à jour</a>
-        <form method="post" action="{{ path('admin.property.delete', {id: property.id}) }}" style="display: inline-block" onsubmit="return confirm('Vous êtes sûr de vouloir supprimer ?')">
-            <input type="hidden" name="_method" value="DELETE">
-            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ property.id) }}">
+    {# <a href="{{ path('admin.property.edit', { id: property.id }) }}" class="btn btn-outline-primary">Mettre à jour</a> #}
+        {# <form method="post" action="{{ path('admin.property.delete', {id: property.id}) }}" style="display: inline-block" onsubmit="return confirm('Vous êtes sûr de vouloir supprimer ?')"> #}
+            {# <input type="hidden" name="_method" value="DELETE"> #}
+            {# <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ property.id) }}"> #}
             <button class="btn btn-outline-danger">Suppression du bien</button>
         </form>
     </td>
-    <td>{{ property.Createdat }}</td>
-    <td>{{ property.seller }}</td>
+    {# <td>{{ product.Created_at }}</td> #}
+    {# <td>{{ property.seller }}</td> #}
     </tr>
-    {% endfor %}
+    {# {% endfor %} #}
     </tbody>
     </table>
     <div class="text-right">

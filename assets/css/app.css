@@ -11,7 +11,9 @@
 .bg-greeny,.greeny {
 	background-color:#799786;
 }
-
+.pink {
+    background-color: #e72a83;
+}
 .btn-outline-info, h1, .info, .diblue {
 	color: #3a3486 !important;
 	border-color: #3a3486 !important;
@@ -32,7 +34,7 @@ figure {
 
 figcaption {
 opacity:0;
-background-color:#60e096;
+background-color: #e72a83;
 text-align:center;
 position:absolute;
 bottom:0;
@@ -44,6 +46,7 @@ right:0;
 figure:hover figcaption {
 transition:all 2s;
   opacity:1;
+  color: white;
 /*   transform:rotate(360deg); */
 }
 .borderCarousel {

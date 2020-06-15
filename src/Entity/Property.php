@@ -35,7 +35,8 @@ class Property
 
     /**
      * @var string|null
-     * @ORM\Column(type="string", length=255)
+     * hack ajout de nullable
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $filename;
 
@@ -49,7 +50,8 @@ class Property
     private $imageFile;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * hack ajout de nullable
      */
     private $type;
 
@@ -127,7 +129,8 @@ class Property
     private $options;
 
     /**
-     * @ORM\Column(type="datetime")
+     * hack ajout de nullable
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $updated_at;
 
@@ -429,4 +432,427 @@ class Property
 
         return $this;
     }
+
+    //  test fusion //
+
+
+
+    
+
+    /**
+     * hack ajout du nullable
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $name;
+
+    /**
+     * hack ajout du nullable
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $lastName;
+
+    /**
+     * hack ajout du nullable
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $birthDate;
+
+    /**
+     * hack ajout du nullable
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $birthPlace;
+
+    /**
+     * hack ajout du nullable
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $secondName;
+
+    /**
+     * hack ajout du nullable
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $secondLastName;
+
+    /**
+     * hack ajout du nullable
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $secondBirthDate;
+
+    /**
+     * hack ajout du nullable
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $secondBirthPlace;
+
+    /**
+     * hack ajout du nullable
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $marriedDate;
+
+    /**
+     * hack ajout du nullable
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $telOne;
+
+    /**
+     * hack ajout du nullable
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $mailOne;
+
+    /**
+     * hack ajout du nullable
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $telTwo;
+
+    /**
+     * hack ajout du nullable
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $mailTwo;
+
+    /**
+     * hack ajout du nullable
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $Procurations;
+
+    /**
+     * hack ajout du nullable
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+     private $AddressProperty;
+
+    // /**
+    //  * hack ajout du nullable
+    //  * @ORM\Column(type="integer", nullable=true)
+    //  */
+    // private $PostalCode2;
+
+    /**
+     * hack ajout du nullable
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $Country;
+
+    /**
+     * hack ajout du nullable
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $Cadastre;
+
+    /**
+     * hack ajout du nullable
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $Notary;
+
+    /**
+     * hack ajout du nullable
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $Exclusivity;
+
+    /**
+     * hack ajout du nullable
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $TextPub;
+
+    /**
+     * hack ajout du nullable
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $Dpe;
+
+    /**
+     * hack ajout du nullable
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $Ges;
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    public function getLastName(): ?string
+    {
+        return $this->lastName;
+    }
+
+    public function setLastName(string $lastName): self
+    {
+        $this->lastName = $lastName;
+
+        return $this;
+    }
+
+    public function getBirthDate(): ?string
+    {
+        return $this->birthDate;
+    }
+
+    public function setBirthDate(string $birthDate): self
+    {
+        $this->birthDate = $birthDate;
+
+        return $this;
+    }
+
+    public function getBirthPlace(): ?string
+    {
+        return $this->birthPlace;
+    }
+
+    public function setBirthPlace(string $birthPlace): self
+    {
+        $this->birthPlace = $birthPlace;
+
+        return $this;
+    }
+
+    public function getSecondName(): ?string
+    {
+        return $this->secondName;
+    }
+
+    public function setSecondName(string $secondName): self
+    {
+        $this->secondName = $secondName;
+
+        return $this;
+    }
+
+    public function getSecondLastName(): ?string
+    {
+        return $this->secondLastName;
+    }
+
+    public function setSecondLastName(string $secondLastName): self
+    {
+        $this->secondLastName = $secondLastName;
+
+        return $this;
+    }
+
+    public function getSecondBirthDate(): ?string
+    {
+        return $this->secondBirthDate;
+    }
+
+    public function setSecondBirthDate(string $secondBirthDate): self
+    {
+        $this->secondBirthDate = $secondBirthDate;
+
+        return $this;
+    }
+
+    public function getSecondBirthPlace(): ?string
+    {
+        return $this->secondBirthPlace;
+    }
+
+    public function setSecondBirthPlace(string $secondBirthPlace): self
+    {
+        $this->secondBirthPlace = $secondBirthPlace;
+
+        return $this;
+    }
+
+    public function getMarriedDate(): ?string
+    {
+        return $this->marriedDate;
+    }
+
+    public function setMarriedDate(string $marriedDate): self
+    {
+        $this->marriedDate = $marriedDate;
+
+        return $this;
+    }
+
+    public function getTelOne(): ?int
+    {
+        return $this->telOne;
+    }
+
+    public function setTelOne(int $telOne): self
+    {
+        $this->telOne = $telOne;
+
+        return $this;
+    }
+
+    public function getMailOne(): ?string
+    {
+        return $this->mailOne;
+    }
+
+    public function setMailOne(string $mailOne): self
+    {
+        $this->mailOne = $mailOne;
+
+        return $this;
+    }
+
+    public function getTelTwo(): ?int
+    {
+        return $this->telTwo;
+    }
+
+    public function setTelTwo(int $telTwo): self
+    {
+        $this->telTwo = $telTwo;
+
+        return $this;
+    }
+
+    public function getMailTwo(): ?string
+    {
+        return $this->mailTwo;
+    }
+
+    public function setMailTwo(string $mailTwo): self
+    {
+        $this->mailTwo = $mailTwo;
+
+        return $this;
+    }
+
+    public function getProcurations(): ?bool
+    {
+        return $this->Procurations;
+    }
+
+    public function setProcurations(?bool $Procurations): self
+    {
+        $this->Procurations = $Procurations;
+
+        return $this;
+    }
+//  Redéfinir pour les proprios //
+
+    public function getAddressProperty(): ?string
+    {
+        return $this->AddressProperty;
+    }
+
+    public function setAddressProperty(string $AddressProperty): self
+    {
+        $this->AddressProperty = $AddressProperty;
+
+        return $this;
+    }
+
+    // public function getPostalCode2(): ?int
+    // {
+    //     return $this->PostalCode2;
+    // }
+
+    // public function setPostalCode2(int $PostalCode2): self
+    // {
+    //     $this->PostalCode2 = $PostalCode2;
+
+    //     return $this;
+    // }
+
+    public function getCountry(): ?string
+    {
+        return $this->Country;
+    }
+
+    public function setCountry(string $Country): self
+    {
+        $this->Country = $Country;
+
+        return $this;
+    }
+
+    public function getCadastre(): ?string
+    {
+        return $this->Cadastre;
+    }
+
+    public function setCadastre(string $Cadastre): self
+    {
+        $this->Cadastre = $Cadastre;
+
+        return $this;
+    }
+
+    public function getNotary(): ?string
+    {
+        return $this->Notary;
+    }
+
+    public function setNotary(string $Notary): self
+    {
+        $this->Notary = $Notary;
+
+        return $this;
+    }
+
+    public function getExclusivity(): ?bool
+    {
+        return $this->Exclusivity;
+    }
+
+    public function setExclusivity(?bool $Exclusivity): self
+    {
+        $this->Exclusivity = $Exclusivity;
+
+        return $this;
+    }
+
+    public function getTextPub(): ?string
+    {
+        return $this->TextPub;
+    }
+
+    public function setTextPub(string $TextPub): self
+    {
+        $this->TextPub = $TextPub;
+
+        return $this;
+    }
+
+    public function getDpe(): ?string
+    {
+        return $this->Dpe;
+    }
+
+    public function setDpe(string $Dpe): self
+    {
+        $this->Dpe = $Dpe;
+
+        return $this;
+    }
+
+    public function getGes(): ?string
+    {
+        return $this->Ges;
+    }
+
+    public function setGes(string $Ges): self
+    {
+        $this->Ges = $Ges;
+
+        return $this;
+    }
+
+    
 }
